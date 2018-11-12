@@ -80,6 +80,9 @@ func drop(gs *GameState, colNum int) error {
 	}
 
 	errWin := RequiredGameNotOver(gs)
+	if errWin != nil {
+		return errWin
+	}
 }
 
 func Winner(gs *GameState) int {
